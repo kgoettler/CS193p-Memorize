@@ -12,7 +12,7 @@ class EmojiMemoryGame: ObservableObject {
     private var theme: EmojiMemoryGameTheme
     
     init() {
-        var theme = EmojiMemoryGameThemes.getRandomTheme()
+        let theme = EmojiMemoryGameThemes.getRandomTheme()
         model = MemoryGame<String>(numberOfPairsOfCards: theme.numberOfPairs) { pairIndex in
             return theme.emojis[pairIndex]
         }
@@ -41,9 +41,11 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     var themeName: String {
-        get {
-            self.theme.name
-        }
+        self.theme.name
+    }
+    
+    var score: Int {
+        self.model.score
     }
     
     // Mark - Intent(s)
