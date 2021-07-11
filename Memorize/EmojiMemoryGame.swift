@@ -25,7 +25,9 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     private func refreshTheme() -> EmojiMemoryGameTheme {
-        return EmojiMemoryGameThemes.getRandomTheme()
+        let theme = EmojiMemoryGameThemes.getRandomTheme()
+        theme.printJSON()
+        return theme
     }
     
     private func refreshMemoryGame() -> MemoryGame<String> {
@@ -42,6 +44,10 @@ class EmojiMemoryGame: ObservableObject {
     
     var themeName: String {
         self.theme.name
+    }
+    
+    var themeColor: Color {
+        Color(theme.color)
     }
     
     var score: Int {

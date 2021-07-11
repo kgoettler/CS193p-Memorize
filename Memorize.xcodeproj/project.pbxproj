@@ -18,6 +18,10 @@
 		14C3E028261911F600BB5D0D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3E027261911F600BB5D0D /* Grid.swift */; };
 		14C3E02D2619156700BB5D0D /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3E02C2619156700BB5D0D /* GridLayout.swift */; };
 		14C3E032261917F100BB5D0D /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3E031261917F100BB5D0D /* Array+Identifiable.swift */; };
+		14E0241F269B997200B81F62 /* themes.json in Resources */ = {isa = PBXBuildFile; fileRef = 14E0241E269B997200B81F62 /* themes.json */; };
+		14E02420269B997200B81F62 /* themes.json in Resources */ = {isa = PBXBuildFile; fileRef = 14E0241E269B997200B81F62 /* themes.json */; };
+		14E02422269B9CA300B81F62 /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E02421269B9CA300B81F62 /* UIColor+RGBA.swift */; };
+		14E02423269B9CA300B81F62 /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E02421269B9CA300B81F62 /* UIColor+RGBA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,8 @@
 		14C3E027261911F600BB5D0D /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		14C3E02C2619156700BB5D0D /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		14C3E031261917F100BB5D0D /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
+		14E0241E269B997200B81F62 /* themes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = themes.json; sourceTree = "<group>"; };
+		14E02421269B9CA300B81F62 /* UIColor+RGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,12 @@
 		149FE11F2618BF310079035F /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				14E0241D269B995800B81F62 /* Resources */,
 				149FE1202618BF310079035F /* MemorizeApp.swift */,
 				149FE1512618C0490079035F /* MemoryGame.swift */,
 				149FE1562618C0B80079035F /* EmojiMemoryGame.swift */,
 				140E491B261B60DD00DBA052 /* EmojiMemoryGameTheme.swift */,
+				14E02421269B9CA300B81F62 /* UIColor+RGBA.swift */,
 				149FE1222618BF310079035F /* EmojiMemoryGameView.swift */,
 				14C3E027261911F600BB5D0D /* Grid.swift */,
 				14C3E02C2619156700BB5D0D /* GridLayout.swift */,
@@ -123,6 +131,14 @@
 				149FE1272618BF310079035F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		14E0241D269B995800B81F62 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14E0241E269B997200B81F62 /* themes.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +211,7 @@
 					};
 					149FE12D2618BF310079035F = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1250;
 						TestTargetID = 149FE11C2618BF310079035F;
 					};
 					149FE1382618BF310079035F = {
@@ -229,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				149FE1282618BF310079035F /* Preview Assets.xcassets in Resources */,
+				14E0241F269B997200B81F62 /* themes.json in Resources */,
 				149FE1252618BF310079035F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E02420269B997200B81F62 /* themes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +280,7 @@
 				14C3E028261911F600BB5D0D /* Grid.swift in Sources */,
 				14C3E032261917F100BB5D0D /* Array+Identifiable.swift in Sources */,
 				149FE1572618C0B80079035F /* EmojiMemoryGame.swift in Sources */,
+				14E02422269B9CA300B81F62 /* UIColor+RGBA.swift in Sources */,
 				140E4917261B54D000DBA052 /* Array+Only.swift in Sources */,
 				140E491C261B60DD00DBA052 /* EmojiMemoryGameTheme.swift in Sources */,
 			);
@@ -270,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E02423269B9CA300B81F62 /* UIColor+RGBA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +480,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MemorizeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -469,6 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kgoettler.MemorizeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memorize.app/Memorize";
@@ -480,6 +503,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MemorizeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
