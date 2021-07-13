@@ -10,6 +10,14 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
+    init(viewModel: EmojiMemoryGame) {
+        self.viewModel = viewModel
+    }
+    
+    init(theme: EmojiMemoryGameTheme) {
+        self.viewModel = EmojiMemoryGame(theme: theme)
+    }
+    
     var body: some View {
         VStack {
             Button("New Game", action: viewModel.createNewGame)

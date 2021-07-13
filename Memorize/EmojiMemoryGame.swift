@@ -11,12 +11,15 @@ class EmojiMemoryGame: ObservableObject {
     @Published private var model: MemoryGame<String>
     private var theme: EmojiMemoryGameTheme
     
-    init() {
-        let theme = EmojiMemoryGameThemes.getRandomTheme()
-        model = MemoryGame<String>(numberOfPairsOfCards: theme.numberOfPairs) { pairIndex in
+    init(theme: EmojiMemoryGameTheme) {
+        self.model = MemoryGame<String>(numberOfPairsOfCards: theme.numberOfPairs) { pairIndex in
             return theme.emojis[pairIndex]
         }
         self.theme = theme
+    }
+    
+    convenience init() {
+        self.init(theme: EmojiMemoryGameThemes.getRandomTheme())
     }
     
     func createNewGame() {
