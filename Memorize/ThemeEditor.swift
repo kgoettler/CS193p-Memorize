@@ -25,16 +25,17 @@ struct ThemeEditor: View {
                 HStack {
                     Spacer()
                     Button(action: {
+                        self.save()
                         self.isShowing = false
                     }, label: { Text("Done") }).padding()
                 }
             }
             Divider()
             Form {
-                Section {
+                Section(header: Text("Theme Name")) {
                     TextField("Theme Name", text: $chosenTheme.name)
                 }
-                Section {
+                Section(header: Text("Emojis")) {
                     GridEmoji(self.chosenTheme.emojis.map { String($0) }, id: \.self ) { emoji in
                         Text(emoji).font(Font.system(size: 40))
                             .onTapGesture {
@@ -45,7 +46,27 @@ struct ThemeEditor: View {
                             }
                     }
                 }
+                Section(header: Text("Card Count")) {
+                    Stepper(value: $numberOfPairs, in: 1...(chosenTheme.emojis.count), label: {
+                        Text("\(numberOfPairs) Cards")
+                    }
+                    )
+                }
             }
+        }
+    }
+    
+    private func save() {
+        
+        // save the name
+        self.chosenTheme.name = self.themeName
+        
+        // save the numbers of pairs of the game
+        self.chosenTheme.numberOfPairs = self.numberOfPairs
+
+        // find in store the theme being edited
+        if let index = self.store.themes.firstIndex(matching: self.chosenTheme) {
+            self.store.themes[index] = self.chosenTheme
         }
     }
 }
